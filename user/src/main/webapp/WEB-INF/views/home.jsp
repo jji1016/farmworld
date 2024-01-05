@@ -37,7 +37,7 @@
 </head>
 <body data-spy="scroll" data-target="#header">
 
-<!-- 추가추가 -->
+<!-- 변경변경 -->
     <!--Start Hedaer Section-->
     <section id="header">
         <div class="header-area">
