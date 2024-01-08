@@ -36,7 +36,7 @@
     <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#header">
-	<!-- 박사라 test -->
+	<!-- 김지영 test -->
     <!--Start Hedaer Section-->
     <section id="header">
         <div class="header-area">
