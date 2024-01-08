@@ -35,135 +35,32 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body data-spy="scroll" data-target="#header">
-	<!-- 김지영 test -->
-    <!--Start Hedaer Section-->
-        <jsp:include page="header.jsp"></jsp:include>
-    <!--End of Hedaer Section-->
 
 
-         <!--Start of slider section-->
-    <section id="slider">
-        <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            </ol>
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <div class="slider_overlay">
-                        <img src="resources/img/img1.png" alt="...">
+         <!--Start Footer Section-->
+    <section id="footer">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <div class="copyright">
+                        <p>@ 2023 - 팜월드 <span><a href="">&#9798;</a></span></p>
                     </div>
                 </div>
-                    <!--End of item With Active-->
-                    <div class="item">
-                        <div class="slider_overlay">
-                            <img src="resources/img/img2.png" alt="...">
-                        </div>
+                <div class="col-md-6">
+                    <div class="designer">
+                        <p>안녕 <a href="#">XpeedStudio</a></p>
                     </div>
-                    <!--End of Item-->
-                    <div class="item">
-                        <div class="slider_overlay">
-                            <img src="resources/img/img3.png" alt="...">
-                        </div>
-                    </div>
-                    <!--End of item-->
                 </div>
-                <!--End of Carousel Inner-->
             </div>
-        </section>
-        <!--end of slider section-->
-
-
-
-        <!--Start of welcome section-->
-        <section id="welcome">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="wel_header">
-                        </div>
-                    </div>
-                </div>
-                <!--End of row-->
-                <div class="row">
-                    <div class="col-md-3" >
-                        <div class="item">
-                            <div class="single_item"  id="img1">
-                                <div class="item_list">
-                                    <div class="welcome_icon">
-                                    	<div class="circle">                                    	
-                                        	<a href='#'><img src="resources/img/popfarm.png" alt="..." id="circleicon1" "></a>
-                                        </div>	
-                                    </div>
-                                    <div id="circleinfo">
-                                   		<h4 id="circletext">인기농장</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End of col-md-3-->
-
-                    <!--End of col-md-3-->
-                    <div class="col-md-3" >
-                        <div class="item" >
-                            <div class="single_item" id="img2">
-                            	<a href='#'>
-	                                <div class="item_list">
-	                                    <div class="welcome_icon">
-                                    		<div class="circle">	                                        
-	                                        	<a href='#'><img src="resources/img/supp.png" alt="..." id="circleicon2" ></a>
-	                                        </div>
-	                                    </div>
-	                                    <div id="circleinfo">
-		                                	<h4 id="circletext">정책</h4>	
-		                                </div>                               
-	                                </div>
-	                            </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End of col-md-3-->
-                    <div class="col-md-3" >
-                        <div class="item" >
-                            <div class="single_item" id="img3">
-                                <div class="item_list">
-                                    <div class="welcome_icon">
-                                        
-                                    </div>
-                                    <br>
-                                    <h4>지도</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End of col-md-3-->
-                </div>
-                <!--End of row-->
-            </div>
-            <!--End of container-->
-        </section>
-        <!--end of welcome section-->
-
-
-
-        <!--Start of volunteer-->
-       
-
-        <!--Start Footer Section-->
-	    <jsp:include page="footer.jsp"></jsp:include>
-    	<!--End Footer Section-->
-
+            <!--End of row-->
+        </div>
+        <!--End of container-->
+    </section>
+    <!--End Footer Section-->
 
     <!--Scroll to top-->
     <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
     <!--End of Scroll to top-->
-
 
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
