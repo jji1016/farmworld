@@ -130,7 +130,9 @@ public class WeatherResponse {
 					String nx;
 					String ny;
 					String category;
-					String obsrValue;
+					String fcstDate;
+					String fcstTime;
+					String fcstValue;
 
 					public String getBaseDate() {
 						return baseDate;
@@ -172,18 +174,35 @@ public class WeatherResponse {
 						this.category = category;
 					}
 
-					public String getObsrValue() {
-						return obsrValue;
+					public String getFcstDate() {
+						return fcstDate;
 					}
 
-					public void setObsrValue(String obsrValue) {
-						this.obsrValue = obsrValue;
+					public void setFcstDate(String fcstDate) {
+						this.fcstDate = fcstDate;
+					}
+
+					public String getFcstTime() {
+						return fcstTime;
+					}
+
+					public void setFcstTime(String fcstTime) {
+						this.fcstTime = fcstTime;
+					}
+
+					public String getFcstValue() {
+						return fcstValue;
+					}
+
+					public void setFcstValue(String fcstValue) {
+						this.fcstValue = fcstValue;
 					}
 
 					@Override
 					public String toString() {
 						return "Item [baseDate=" + baseDate + ", baseTime=" + baseTime + ", nx=" + nx + ", ny=" + ny
-								+ ", category=" + category + ", obsrValue=" + obsrValue + "]";
+								+ ", category=" + category + ", fcstDate=" + fcstDate + ", fcstTime=" + fcstTime
+								+ ", fcstValue=" + fcstValue + "]";
 					}
 				}
 			}

@@ -64,7 +64,7 @@
                                     <li><a href="#shopping">쇼핑</a></li>
                                     <li><a href="">마이농장</a></li>
                                     <li><a href="">지식</a></li>
-                                    <li><a href="" class="icon"><span class="material-icons">person</span></a></li>
+                                    <li><a href="/user/login.jsp" class="icon"><span class="material-icons">person</span></a></li>
                                     <li><a href="" class="icon"><span class="material-icons">shopping_cart</span></a></li>
                                     <li><a href="" class="icon"><span class="material-icons">menu</span></a></li>
                                 </ul>
