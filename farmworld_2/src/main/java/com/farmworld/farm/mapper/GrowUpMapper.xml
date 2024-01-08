@@ -4,7 +4,9 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.spring.mapper.GrowUpMapper">
-	<sql id=""></sql>
+	<sql id="growupColumns">
+        grow_num, grow_title, grow_content, grow_date, farm_num, user_num, image_folder_num, growup_category
+    </sql>
 
 	<insert id="insert" parameterType="GrowUpVO">
 		insert into GrowUp

@@ -15,7 +15,7 @@ public interface GrowUpMapper {
 
 	public int update(GrowUpVO vo);
 
-	public int delete(int bno);
+	public int delete(int grow_num);
 
 	public GrowUpVO select(Integer key);
 
