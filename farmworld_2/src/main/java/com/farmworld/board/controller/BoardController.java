@@ -16,5 +16,6 @@ public class BoardController {
 		log.info("전체 리스트");
 		return "board";
 	}
+
 	
 }
