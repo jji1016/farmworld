@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 
-<jsp:include page="header.jsp"></jsp:include>
+<%@include file="../header.jsp" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -147,3 +147,5 @@
 	  </div>
 	</form>
 </div>
+
+<%@include file="../footer.jsp" %>
