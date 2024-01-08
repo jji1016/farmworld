@@ -138,10 +138,13 @@
                             <div class="single_item"  id="img1">
                                 <div class="item_list">
                                     <div class="welcome_icon">
-                                        <a href='#'><img src="resources/img/popfarm.png" alt="..."></a>
+                                    	<div class="circle">                                    	
+                                        	<a href='#'><img src="resources/img/popfarm.png" alt="..." id="circleicon1" "></a>
+                                        </div>	
                                     </div>
-                                    <br>
-                                        <h4>인기농장</h4>
+                                    <div id="circleinfo">
+                                   		<h4 id="circletext">인기농장</h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -155,10 +158,13 @@
                             	<a href='#'>
 	                                <div class="item_list">
 	                                    <div class="welcome_icon">
-	                                        <img src="resources/img/supp.png" alt="..." id="mainicon">
+                                    		<div class="circle">	                                        
+	                                        	<a href='#'><img src="resources/img/supp.png" alt="..." id="circleicon2" ></a>
+	                                        </div>
 	                                    </div>
-	                                    <br>
-	                                    <h4>정책</h4>
+	                                    <div id="circleinfo">
+		                                	<h4 id="circletext">정책</h4>	
+		                                </div>                               
 	                                </div>
 	                            </a>
                             </div>

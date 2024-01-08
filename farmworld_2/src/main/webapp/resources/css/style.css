@@ -483,6 +483,42 @@ input: -webkit-autofill:focus {
     color: #C2DB29;
     cursor: pointer;
 }
+.circle{
+	position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	width: 50%;
+	height: 70%;
+	background-color: #FFF7E0;
+	border: 4px #FFF7E0 solid;
+	border-radius: 50% 50% 50% 50%;
+}
+#welcome .circle:hover{
+	background: black;
+	border: 4px black solid;
+}
+#circleicon1 {
+	width: 60%;
+	height: 60%;
+	position: absolute;
+    top: 16%;
+    left: 23%;
+}
+#circleicon2 {
+	width: 60%;
+	height: 60%;
+	position: absolute;
+    top: 17%;
+    left: 26%;
+}
+#circleinfo{
+	padding-top: 20px;
+}
+#circletext{
+	text-align: center;
+    font-size: 30px;
+}
 
 
 #footer {
