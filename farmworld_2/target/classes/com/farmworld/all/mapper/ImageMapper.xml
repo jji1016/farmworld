@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.farmworld.farm.mapper.GrowUpMapper">
+<mapper namespace="com.farmworld.all.mapper.ImageMapper">
 	<sql id="growupColumns">
         grow_num, grow_title, grow_content, grow_date, farm_num, user_num, image_folder_num, growup_category
     </sql>
