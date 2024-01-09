@@ -10,7 +10,7 @@
 
 	<insert id="insert" parameterType="GrowUpVO">
 		insert into GrowUp
-		(far, grow_content)
+		(grow_title, grow_content)
 		values (#{grow_title}, #{grow_content})
 	</insert>
 
