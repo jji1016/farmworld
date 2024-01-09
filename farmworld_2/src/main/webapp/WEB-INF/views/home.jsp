@@ -230,20 +230,10 @@
         <script src="resources/js/isotope/packery-mode.pkgd.min.js"></script>
         <script src="resources/js/isotope/scripts.js"></script>
 
-
-        <!--Back To Top-->
-        <script src="js/backtotop.js"></script>
-
-
         <!--JQuery Click to Scroll down with Menu-->
         <script src="resources/js/jquery.localScroll.min.js"></script>
         <script src="resources/js/jquery.scrollTo.min.js"></script>
-        <!--WOW With Animation-->
-        <script src="js/wow.min.js"></script>
-        <!--WOW Activated-->
-        <script>
-            new WOW().init();
-        </script>
+
 
 
         <!-- Include all compiled plugins (below), or include individual files as needed -->

@@ -638,4 +638,7 @@ ul.entry-meta {
     margin-top: 80px;
 }
 
-
+/* user */
+.user_btn{
+	display: table;
+}
