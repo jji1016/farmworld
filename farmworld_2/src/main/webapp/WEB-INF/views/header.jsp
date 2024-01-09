@@ -53,7 +53,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand custom_navbar-brand" href="#"><img src="resources/img/farm_world.png" alt=""></a>
+                                <a class="navbar-brand custom_navbar-brand" href="#"><img src="/resources/img/farm_world.png" alt=""></a>
                             </div>
                             <!--End of navbar-header-->
 
