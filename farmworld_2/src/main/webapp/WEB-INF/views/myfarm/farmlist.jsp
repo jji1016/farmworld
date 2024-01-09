@@ -45,14 +45,14 @@
     <div style="width: 100%;
     height: 60%;
     margin-left: 6%;
-    margin-top: 10%;
+    margin-top: 30%;
     background-color: #20c997;"></div>
     </div>
             <div class="row" style="width:70%; float:right; margin-top: 2%;">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-
+							<p>농장 검색<p>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -85,7 +85,13 @@
                         	
 							<div class="grid-wrapper">
                                 <div class="grid text-center" style="width:100%" style="display:block">
-							      <div class="g-col-4">농장1<br><br><br>힝</div>
+									<div class="g-col-4 card">
+									  <img src="/resources/img/popfarm.png" class="card-img-top" alt="...">
+									  <div class="card-body" style="margin-top:4%">
+									    <h4 class="card-title">농장 제목</h4>
+									    <p class="card-text">농장 소개</p>
+									  </div>
+									</div>
 							      <div class="g-col-4">농장2</div>
 							      <div class="g-col-4">농장3</div>
 							    </div>
