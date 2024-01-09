@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="org.spring.mapper.MyFarmMapper">
+<mapper namespace="com.farmworld.farm.mapper.MyFarmMapper">
 	<sql id="myfarmColumns">
     farm_num, farm_name, farm_intro, user_num, image_folder_num, myfarm_view
 	</sql>

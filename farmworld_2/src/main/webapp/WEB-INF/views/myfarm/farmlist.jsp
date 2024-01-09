@@ -15,59 +15,54 @@
 	<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="resources/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/resources/css/font-awesome.min.css">
     <!-- Animated CSS -->
-    <link rel="stylesheet" type="text/css" href="resources/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/animate.min.css">
     <!-- Bootstrap -->
-    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Carousel -->
-    <link type="text/css" rel="stylesheet" href="resources/css/carousel.css" />
-    <link rel="stylesheet" href="resources/css/isotope/style.css">
+    <link type="text/css" rel="stylesheet" href="/resources/css/carousel.css" />
+    <link rel="stylesheet" href="/resources/css/isotope/style.css">
     <!-- Main Stylesheet -->
-    <link href="resources/css/style.css" rel="stylesheet">
+    <link href="/resources/css/style.css" rel="stylesheet">
     <!-- Responsive Framework -->
-    <link href="resources/css/responsive.css" rel="stylesheet">
+    <link href="/resources/css/responsive.css" rel="stylesheet">
 	
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--[if lt IE 9]>
-    
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+	    <link
+      href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+      rel="stylesheet"
+    />
+
 </head>
 <body data-spy="scroll" data-target="#header">
 	<!-- 김지영 test -->
     <!--Start Hedaer Section-->
-        <jsp:include page="header.jsp"></jsp:include>
+        <jsp:include page="../header.jsp"></jsp:include>
     <!--End of Hedaer Section-->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                     		 DataTables Advanced Tables
-                            <button id="regBtn" type="button" class="btn btn-xs pull-right">글 작성</button>
+
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                         
                         	<form id="searchForm" action="/board/list" method="get">
-	                        	<div class="form-group col-xs-4">
+	                        	<div class="form-group col-xs-6">
 	                                 <select id="type" class="form-control" name="type">
-	                                     <option value="TCW" 
-	                                     	<c:out value="${pageMaker.cri.type == 'TCW'?'selected':''}"/>>전체</option>
+	                                     <option value="TW" 
+	                                     	<c:out value="${pageMaker.cri.type == 'TW'?'selected':''}"/>>전체</option>
 	                                     <option value="T" 
-	                                     	<c:out value="${pageMaker.cri.type == 'T'?'selected':''}"/>>제목</option>
-	                                     <option value="C" 
-	                                     	<c:out value="${pageMaker.cri.type == 'C'?'selected':''}"/>>내용</option>
+	                                     	<c:out value="${pageMaker.cri.type == 'T'?'selected':''}"/>>농장 이름</option>
 	                                     <option value="W" 
-	                                     	<c:out value="${pageMaker.cri.type == 'W'?'selected':''}"/>>작성자</option>
-	                                     <option value="TC"
-	                                     <c:out value="${pageMaker.cri.type == 'TC'?'selected':''}"/>>제목+내용</option>
+	                                     	<c:out value="${pageMaker.cri.type == 'W'?'selected':''}"/>>농장주</option>
 	                                 </select>
 	                             </div>
 	                              <div class="col-xs-6">
-			                        <div class="form-group input-group">
-			                           <input type='text' name='keyword'
+			                        <div class="form-group input-group" >
+			                           <input type='text' style="width:90%" name='keyword'
 											value='<c:out value="${pageMaker.cri.keyword}"/>' /> 
 										<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
                             			<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
@@ -80,19 +75,18 @@
 			                    </div>
                         	</form>
                         	
-                            <table id="boardTable" width="100%" 
-                            	class="table table-striped table-bordered table-hover">
-                                <thead>
-                                    <tr>
-										<th>bno</th>
-										<th>title</th>
-										<th>content</th>
-										<th>writer</th>
-										<th>regdate</th>
-									</tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
+							<div class="grid-wrapper">
+                                <div class="grid text-center" style="width:100%" style="display:block">
+							      <div class="g-col-4">농장1<br><br><br>힝</div>
+							      <div class="g-col-4">농장2</div>
+							      <div class="g-col-4">농장3</div>
+							    </div>
+							    <div class="grid text-center" style="width:100%" style="display:block">
+							      <div class="g-col-4">농장4</div>
+							      <div class="g-col-4">농장5</div>
+							      <div class="g-col-4">농장6</div>
+							    </div>
+							</div>
                             <div class="pull-right">
                             	<ul class="pagination">
                             		<c:if test="${pageMaker.prev }">
@@ -126,7 +120,7 @@
 
 
         <!--Start Footer Section-->
-	    <jsp:include page="footer.jsp"></jsp:include>
+	    <jsp:include page="../footer.jsp"></jsp:include>
     	<!--End Footer Section-->
 
 
@@ -138,22 +132,22 @@
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>-->
-        <script src="resources/js/jquery-1.12.3.min.js"></script>
+        <script src="/resources/js/jquery-1.12.3.min.js"></script>
 
         <!--Counter UP Waypoint-->
-        <script src="resources/js/waypoints.min.js"></script>
+        <script src="/resources/js/waypoints.min.js"></script>
         <!--Counter UP-->
-        <script src="resources/js/jquery.counterup.min.js"></script>
+        <script src="/resources/js/jquery.counterup.min.js"></script>
 
        
 
 
         <!--Isotope-->
-        <script src="resources/js/isotope/min/scripts-min.js"></script>
-        <script src="resources/js/isotope/cells-by-row.js"></script>
-        <script src="resources/js/isotope/isotope.pkgd.min.js"></script>
-        <script src="resources/js/isotope/packery-mode.pkgd.min.js"></script>
-        <script src="resources/js/isotope/scripts.js"></script>
+        <script src="/resources/js/isotope/min/scripts-min.js"></script>
+        <script src="/resources/js/isotope/cells-by-row.js"></script>
+        <script src="/resources/js/isotope/isotope.pkgd.min.js"></script>
+        <script src="/resources/js/isotope/packery-mode.pkgd.min.js"></script>
+        <script src="/resources/js/isotope/scripts.js"></script>
 
 
         <!--Back To Top-->
@@ -161,8 +155,8 @@
 
 
         <!--JQuery Click to Scroll down with Menu-->
-        <script src="resources/js/jquery.localScroll.min.js"></script>
-        <script src="resources/js/jquery.scrollTo.min.js"></script>
+        <script src="/resources/js/jquery.localScroll.min.js"></script>
+        <script src="/resources/js/jquery.scrollTo.min.js"></script>
         <!--WOW With Animation-->
         <script src="js/wow.min.js"></script>
         <!--WOW Activated-->
@@ -170,9 +164,9 @@
             new WOW().init();
         </script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="resources/js/bootstrap.min.js"></script>
+        <script src="/resources/js/bootstrap.min.js"></script>
         <!-- Custom JavaScript-->
-        <script src="resources/js/main.js"></script>
+        <script src="/resources/js/main.js"></script>
     </body>
 
 </html>
