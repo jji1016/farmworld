@@ -15,18 +15,18 @@
 	<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="resources/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/resources/css/font-awesome.min.css">
     <!-- Animated CSS -->
-    <link rel="stylesheet" type="text/css" href="resources/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/animate.min.css">
     <!-- Bootstrap -->
-    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Carousel -->
-    <link type="text/css" rel="stylesheet" href="resources/css/carousel.css" />
-    <link rel="stylesheet" href="resources/css/isotope/style.css">
+    <link type="text/css" rel="stylesheet" href="/resources/css/carousel.css" />
+    <link rel="stylesheet" href="/resources/css/isotope/style.css">
     <!-- Main Stylesheet -->
-    <link href="resources/css/style.css" rel="stylesheet">
+    <link href="/resources/css/style.css" rel="stylesheet">
     <!-- Responsive Framework -->
-    <link href="resources/css/responsive.css" rel="stylesheet">
+    <link href="/resources/css/responsive.css" rel="stylesheet">
 	
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--[if lt IE 9]>
@@ -64,7 +64,7 @@
                                     <li><a href="#shopping">쇼핑</a></li>
                                     <li><a href="">마이농장</a></li>
                                     <li><a href="">지식</a></li>
-                                    <li><a href="/user/login.jsp" class="icon"><span class="material-icons">person</span></a></li>
+                                    <li><a href="/user/login" class="icon"><span class="material-icons">person</span></a></li>
                                     <li><a href="" class="icon"><span class="material-icons">shopping_cart</span></a></li>
                                     <li><a href="" class="icon"><span class="material-icons">menu</span></a></li>
                                 </ul>

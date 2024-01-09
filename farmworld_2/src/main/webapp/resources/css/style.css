@@ -58,7 +58,7 @@ font-family: 'Roboto', sans-serif;
 /*UNIVERSAL CODE*/
 
 * {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 }
 
@@ -126,7 +126,8 @@ img {
     height: auto;
 }
 html {
-    height: 100%
+    height: 100%;
+    max-width: fit-content;
 }
 body {
 }
@@ -526,6 +527,8 @@ input: -webkit-autofill:focus {
     min-height: 100px;
     background: #222222;
     color: #fff;
+    position: absolute;
+    bottom: 0;
 }
 #footer .copyright,
 #footer .designer {

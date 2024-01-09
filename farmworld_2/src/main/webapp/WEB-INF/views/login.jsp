@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 
-<%@include file="../header.jsp" %>
+ <jsp:include page="header.jsp"></jsp:include>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
-<form class="row g-3">
+<form class="row g-3" action="/user/login" method="get">
   <div id="user_border">
     <div class="col-auto">
       <input
@@ -49,4 +49,4 @@
   </div>
 </form>
 
-<%@include file="../footer.jsp" %>
+<jsp:include page="footer.jsp"></jsp:include>
