@@ -1,0 +1,28 @@
+package com.farmworld.board.mapper;
+
+import java.util.List;
+
+import com.farmworld.all.domain.Criteria;
+import com.farmworld.board.domain.BoardVO;
+
+public interface BoardMapper {
+	
+	public void insert(BoardVO vo);
+
+	public void insertSelectBno(BoardVO vo);
+
+	public List<BoardVO> selectAll();
+
+	public int update(BoardVO vo);
+
+	public int delete(int bno);
+
+	public BoardVO select(Integer key);
+
+	public List<BoardVO> getListWithSearch(Criteria cri);
+	
+	public int getTotalCount(Criteria cri);
+	
+	public List<BoardVO> getListWithPaging(Criteria cri);
+
+}

@@ -53,18 +53,18 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand custom_navbar-brand" href="#"><img src="resources/img/farm_world.png" alt=""></a>
+                                <a class="navbar-brand custom_navbar-brand" href="#"><img src="/resources/img/farm_world.png" alt=""></a>
                             </div>
                             <!--End of navbar-header-->
 
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse zero_mp" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-right main_menu">
-                                    <li><a href="">게시판<span class="sr-only">(current)</span></a></li>
+                                    <li><a href="/board/list">게시판<span class="sr-only">(current)</span></a></li>
                                     <li><a href="#shopping">쇼핑</a></li>
                                     <li><a href="">마이농장</a></li>
                                     <li><a href="">지식</a></li>
-                                    <li><a href="/user/login.jsp" class="icon"><span class="material-icons">person</span></a></li>
+                                    <li><a href="/user/login" class="icon"><span class="material-icons">person</span></a></li>
                                     <li><a href="" class="icon"><span class="material-icons">shopping_cart</span></a></li>
                                     <li><a href="" class="icon"><span class="material-icons">menu</span></a></li>
                                 </ul>
