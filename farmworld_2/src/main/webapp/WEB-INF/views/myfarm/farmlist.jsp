@@ -4,7 +4,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,6 +33,14 @@
       href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
       rel="stylesheet"
     />
+<style>
+    .fixed-size-image {
+		max-width: 200px;
+        max-height: 200px;
+
+        object-fit: fill;
+    }
+</style>
 
 </head>
 <body data-spy="scroll" data-target="#header">
@@ -40,15 +48,16 @@
     <!--Start Hedaer Section-->
         <jsp:include page="../header.jsp"></jsp:include>
     <!--End of Hedaer Section-->
-    <div class="row" style="width: 30%;
-    height: 40em; float:left;">
-    <div style="width: 100%;
-    height: 60%;
-    margin-left: 6%;
-    margin-top: 30%;
-    background-color: #20c997;"
-     onclick="redirectToRegister()"></div>
+    <div class="row" style="width: 30%; height: 40em; float:left;">
+    	<div class="register-div" 
+    	style="width: 100%; height: 60%; margin-left: 6%; margin-top: 30%; background-color: #20c997;"
+    	onclick="redirectToRegister()">
+    		<div style="margin-top:5%; width: 80%; height: 60%; text-align:center;">
+    			<img src='/resources/img/harvest.png'/> <h3 style="margin-top:4%">내 농장 만들기</h3>
+    		</div>
+    	</div>
     </div>
+    
             <div class="row" style="width:70%; float:right; margin-top: 2%;">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
@@ -58,7 +67,7 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                         
-                        	<form id="searchForm" action="/board/list" method="get">
+                        	<form id="searchForm" action="/myfarm/farmlist" method="get" onsubmit="return validateKeyword()">
 	                        	<div class="form-group col-xs-6">
 	                                 <select id="type" class="form-control" name="type">
 	                                     <option value="TW" 
@@ -85,27 +94,13 @@
                         	</form>
                         	
 							<div class="grid-wrapper">
-                                <div class="grid text-center" style="width:100%" style="display:block">
-									<div class="g-col-4 card">
-									  <img src="/resources/img/popfarm.png" class="card-img-top" alt="농장 이미지">
-									  <div class="card-body" style="margin-top:4%">
-									    <h4 class="card-title">농장 제목</h4>
-									    <p class="card-text">농장 소개</p>
-									  </div>
-									</div>
-							      <div class="g-col-4">농장2</div>
-							      <div class="g-col-4">농장3</div>
+                                <div class="grid text-center" id="myfarminput1" style="width:100%" style="display:block">
+
+
 							    </div>
 							    <div class="grid text-center" style="width:100%" style="display:block">
-							      <div class="g-col-4 card">
-									  <img src="/resources/img/popfarm.png" class="card-img-top" alt="농장 이미지">
-									  <div class="card-body" style="margin-top:4%">
-									    <h4 class="card-title">농장 제목</h4>
-									    <p class="card-text">농장 소개</p>
-									  </div>
-									</div>
-							      <div class="g-col-4">농장5</div>
-							      <div class="g-col-4">농장6</div>
+							      
+
 							    </div>
 							</div>
                             <div class="pull-right">
@@ -121,7 +116,7 @@
                             		</c:if>
                             	</ul>
                             </div>
-                            <form id="actionForm" action="/board/list" method="get">
+                            <form id="actionForm" action="/myfarm/farmlist" method="get">
                             	<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
                             	<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
                             	<input type="hidden" name="type" value="${pageMaker.cri.type }">
@@ -159,19 +154,109 @@
         <script src="/resources/js/waypoints.min.js"></script>
         <!--Counter UP-->
         <script src="/resources/js/jquery.counterup.min.js"></script>
-        <script>
+		<script>
+		function validateKeyword() {
+	        var keyword = document.forms["searchForm"]["keyword"].value;
+	        if (keyword.length === 1) {
+	            alert("검색어는 2자 이상으로 입력해주세요.");
+	            return false;
+	        }
+	        return true;
+	    }
 		    $(document).ready(function() {
 		        $('.register-div').click(function() {
-		            // jQuery를 사용하여 /register로 이동
-		            window.location.href = '/register';
+		            // jQuery를 사용하여 /myfarm/register로 이동
+		            // 이동하기 전에 세션에 user_num이 있는지 확인
+		            $.ajax({
+		                url: '/myfarm/checkSession',  // 세션 체크를 처리하는 컨트롤러 엔드포인트
+		                type: 'GET',
+		                success: function(response) {
+		                    if (response.hasUserNum) {
+		                        // 세션에 user_num이 있으면 /myfarm/register로 이동
+		                        window.location.href = '/myfarm/register';
+		                    } else {
+		                        // 세션에 user_num이 없으면 /login으로 이동
+		                        alert("로그인을 해주세요!");
+		                        window.location.href = '/login';
+		                    }
+		                },
+		                error: function(error) {
+		                    console.log('세션 체크 에러:', error);
+		                }
+		            });
 		        });
 		    });
 		</script>
+		<script type="text/javascript">
+	$(document).ready(function() {
+		
+		loadTableData(); // Ajax 실행 함수 호출
+		
+		function loadTableData() {
+
+			$.ajax({
+				url: "/myfarm/getlist", 
+				type: "POST", 
+				dataType : "json",
+				data:{
+					type : $("#type").val(),
+					keyword : $("#searchForm").find("input[name='keyword']").val(),
+					pageNum: $("#actionForm").find("input[name='pageNum']").val(),
+					amount: $("#actionForm").find("input[name='amount']").val()
+				},
+				success: function(data){
+					let myFarmBody = $("#myfarminput1");
+					
+					$.each(data, function(index,myfarm){
+
+						let row ="";
+						row+=("<div class='g-col-4 card'>");
+						row+=("<img src='/resources/img/popfarm.png' class='card-img-top fixed-size-image' alt='농장 이미지'>");
+						row+=("<div class='card-body' style='margin-top:4%'>");
+						row+=("<h4 class='card-title'>"+myfarm.farm_name+"</h4>");
+						let intro = myfarm.farm_intro;
+	                        for (let i = 0; i < intro.length; i++) {
+	                            row += intro[i];
+	                            if ((i + 1) % 17 === 0) {
+	                                row += "<br>";
+	                            }
+	                        }
+						row+=("</div></div>");
+
+						
+						myFarmBody.append(row);
+						
+					});
+				},
+				error: function(e){
+					console.log(e);
+				}
+
+			});
+		
+			let actionForm = $("#actionForm");
+			var searchForm = $("#searchForm");
+			
+			$(".paginate_button a").on("click", function(e) {
+				e.preventDefault(); // 기존에 가진 이벤트를 중단
+				actionForm.find("input[name='pageNum']").val($(this).attr("href"));
+				actionForm.submit();
+			});
+			
+			$("#searchForm button").on("click", function(e) {
+			searchForm.find("input[name='pageNum']").val("1");
+				e.preventDefault();
+				searchForm.submit();
+			});
+		}
+
+		}); // -- $(document).ready 함수 선언 종료
+	</script>
 
        
 
 
-        <!--Isotope-->
+        <!--Isotope-->	
         <script src="/resources/js/isotope/min/scripts-min.js"></script>
         <script src="/resources/js/isotope/cells-by-row.js"></script>
         <script src="/resources/js/isotope/isotope.pkgd.min.js"></script>
