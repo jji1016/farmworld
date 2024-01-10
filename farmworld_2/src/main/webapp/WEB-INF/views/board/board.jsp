@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,7 +70,7 @@
 											<th>board_title</th>
 											<th>board_content</th>
 											<th>writer</th> <!-- user_num이용 -->
-											<th>regdate</th>
+											<th>board_date</th>
 											<th>board_view</th>
 										</tr>
                                 </thead>
@@ -155,7 +156,7 @@
 		
 		function loadTableData(){
 			$.ajax({
-				url: "/board/getList",
+				url: "/board/searchList",
 				type: "POST",
 				dataType : "json",
 				data: {
@@ -169,19 +170,20 @@
 					let boardTbody = $("tbody");
 					// for( let item of items) -> 여기서 items 은 data와 같고 item은 board와 같음
 					$.each(data, function(index,board){
-						let regDate = new Date(board.regdate);
+						let board_date = new Date(board.board_date);
 						let options = {year:"numeric",month:"2-digit", day:"2-digit", hour:"2-digit",minute:"2-digit"}
-						let formatDate = regDate.toLocaleString("ko-KR",options);
+						let formatDate = board_date.toLocaleString("ko-KR",options);
 						
 						let row = $("<tr>");
-						row.append($("<td>").text(board.bno));
+						row.append($("<td>").text(board.board_num));
 						
-						let titleLink = $("<a>").attr("href","/board/get?bno="+board.bno).text(board.title);
+						let titleLink = $("<a>").attr("href","/board/get?board_num="+board.board_num).text(board.board_title);
 						let titleTd = $("<td>").append(titleLink);
 						row.append(titleTd);
-						row.append($("<td>").text(board.content));
+						row.append($("<td>").text(board.board_content));
 						row.append($("<td>").text(board.writer));
 						row.append($("<td>").text(formatDate));
+						row.append($("<td>").text(board.board_view));
 						
 						
 						boardTbody.append(row);

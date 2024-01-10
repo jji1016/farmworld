@@ -15,7 +15,7 @@ public interface BoardMapper {
 
 	public int update(BoardVO vo);
 
-	public int delete(int bno);
+	public int delete(int board_num);
 
 	public BoardVO select(Integer key);
 

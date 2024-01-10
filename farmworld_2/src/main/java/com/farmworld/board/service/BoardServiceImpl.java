@@ -37,7 +37,7 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public void delete(Integer key) {
-		log.info("remove실행");
+		log.info("delete실행");
 		mapper.delete(key);
 	}
 

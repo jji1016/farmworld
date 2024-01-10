@@ -8,15 +8,15 @@
 
 	<insert id="insert" parameterType="BoardVO">
 		insert into board
-		(title,content,writer)
-		values (#{title}, #{content}, #{writer})
+		(board_title,board_content,writer)
+		values (#{board_title}, #{board_content}, #{writer})
 	</insert>
 
 	<insert id="insertSelectBno" parameterType="BoardVO"
 		keyColumn="board_num" keyProperty="board_num" useGeneratedKeys="true">
 		insert into board
-		(title,content,writer)
-		values (#{title}, #{content}, #{writer})
+		(board_title,board_content,writer)
+		values (#{board_title}, #{board_content}, #{writer})
 	</insert>
 
 	<select id="selectAll" resultType="BoardVO">
@@ -37,14 +37,12 @@
 
 	<update id="update" parameterType="BoardVO">
 		UPDATE board
-		SET title =
-		#{title},content = #{content}
+		SET board_title = #{board_title}, board_content = #{board_content}
 		WHERE board_num = #{board_num}
 	</update>
 
 	<delete id="delete" parameterType="BoardVO">
-		DELETE FROM board WHERE board_num =
-		#{board_num}
+		DELETE FROM board WHERE board_num =	#{board_num}
 	</delete>
 
 	<select id="select" resultType="BoardVO" parameterType="BoardVO">
@@ -58,17 +56,17 @@
 			<where>
 				<choose>
 					<when test="type == 'TC'">
-						AND title LIKE CONCAT('%',#{keyword},'%') OR 
-						content LIKE CONCAT('%',#{keyword},'%')
+						AND board_title LIKE CONCAT('%',#{keyword},'%') OR 
+						board_content LIKE CONCAT('%',#{keyword},'%')
 					</when>
 					<when test="type == 'TCW'">
-					    AND (title LIKE CONCAT('%',#{keyword},'%') OR content LIKE CONCAT('%',#{keyword},'%') OR writer LIKE CONCAT('%',#{keyword},'%'))
+					    AND (board_title LIKE CONCAT('%',#{keyword},'%') OR board_content LIKE CONCAT('%',#{keyword},'%') OR writer LIKE CONCAT('%',#{keyword},'%'))
 					</when>
 					<when test='type == "T"'>
-						AND title LIKE CONCAT('%',#{keyword},'%') 
+						AND board_title LIKE CONCAT('%',#{keyword},'%') 
 					</when>
 					<when test='type == "C"'>
-						AND content LIKE CONCAT('%',#{keyword},'%')
+						AND board_content LIKE CONCAT('%',#{keyword},'%')
 					</when>
 					<when test='type == "W"'>
 						AND writer LIKE CONCAT('%',#{keyword},'%') 
@@ -87,11 +85,11 @@
 			<where>
 				<choose>
 					<when test="type == 'TC'">
-						AND title LIKE CONCAT('%',#{keyword},'%') OR 
-						content LIKE CONCAT('%',#{keyword},'%')
+						AND board_title LIKE CONCAT('%',#{keyword},'%') OR 
+						board_content LIKE CONCAT('%',#{keyword},'%')
 					</when>
 					<when test="type == 'TCW'">
-					    AND (title LIKE CONCAT('%',#{keyword},'%') OR content LIKE CONCAT('%',#{keyword},'%') OR writer LIKE CONCAT('%',#{keyword},'%'))
+					    AND (board_title LIKE CONCAT('%',#{keyword},'%') OR board_content LIKE CONCAT('%',#{keyword},'%') OR writer LIKE CONCAT('%',#{keyword},'%'))
 					</when>
 					<otherwise>
 						AND ${type} LIKE CONCAT('%',#{keyword},'%')
