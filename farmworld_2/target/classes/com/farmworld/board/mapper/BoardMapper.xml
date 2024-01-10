@@ -52,7 +52,7 @@
 		FROM board WHERE board_num = #{board_num}
 	</select>
 
-	<select id="getTotlaCount" resultType="int" parameterType="com.farmworld.all.domain.Criteria">
+	<select id="getTotalCount" resultType="int" parameterType="com.farmworld.all.domain.Criteria">
 		SELECT COUNT(board_num) FROM board
 				<if test="type != null and type != '' and keyword != null and keyword != ''">
 			<where>

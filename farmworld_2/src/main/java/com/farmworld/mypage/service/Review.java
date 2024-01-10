@@ -5,7 +5,7 @@ import java.util.List;
 import com.farmworld.all.service.Generic;
 import com.farmworld.mypage.domain.ReviewVO;
 
-public interface Review extends Generic<VO, K> {
+public interface Review extends Generic<ReviewVO, Integer> {
 
 	public List<ReviewVO> reviewAll(int goods_num);
 	
