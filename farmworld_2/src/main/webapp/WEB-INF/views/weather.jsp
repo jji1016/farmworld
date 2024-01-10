@@ -73,14 +73,7 @@
     	            						html+="<img src='/resources/img/weatherIcon/temperature.png' style='width:10%; height:10%;'>"+"현재기온:"+key["fcstValue"];
     	            						html +="<br>";
     	            					}	
-    	            					if(key["category"] =="TMX"){	
-    	            						html +="최고기온:"+key["fcstValue"];
-    	            						html +="<br>";
-    	            					}	
-    	            					if(key["category"] =="TMN"){	
-    	            						html+="최저기온:"+key["fcstValue"];
-    	            						html +="<br>";
-    	            					}	
+
     	            					if(key["category"] =="PCP"){	
     	            						if(key["fcstValue"] !="강수없음"){
     	            							html+="<img src='/resources/img/weatherIcon/rain.png' style='width:10%; height:10%;'>";
