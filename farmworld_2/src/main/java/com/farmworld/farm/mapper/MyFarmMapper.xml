@@ -25,23 +25,18 @@
 		select * from myfarm
 	</select>
 
-	<select id="getListWithSearch" resultType="MyFarmVO"
-		parameterType="org.spring.domain.Criteria">
-		SELECT * FROM myfarm
-		<if
-			test="type != null and type != '' and keyword != null and keyword != ''">
-			<where>
-				AND ${type} LIKE CONCAT('%',#{keyword},'%')
-			</where>
-		</if>
-		ORDER BY bno DESC
-	</select>
 
 	<update id="update" parameterType="MyFarmVO">
 		UPDATE myfarm
 		SET farm_name =
 		#{farm_name},
 		farm_intro = #{farm_intro}
+		WHERE farm_num = #{farm_num}
+	</update>
+	
+	<update id="viewCount" parameterType="MyFarmVO">
+		UPDATE myfarm
+		SET farm_view = +1
 		WHERE farm_num = #{farm_num}
 	</update>
 
@@ -55,7 +50,7 @@
 		FROM myfarm WHERE farm_num = #{farm_num}
 	</select>
 
-	<select id="getTotalCount" resultType="int" parameterType="org.spring.domain.Criteria">
+	<select id="getTotalCount" resultType="int" parameterType="com.farmworld.all.domain.Criteria">
 		SELECT COUNT(farm_num) FROM myfarm
 				<if test="type != null and type != '' and keyword != null and keyword != ''">
 			<where>
@@ -84,7 +79,7 @@
 
 
 	<select id="getListWithPaging" resultType="MyFarmVO"
-		parameterType="org.spring.domain.Criteria">
+		parameterType="com.farmworld.all.domain.Criteria">
 		SELECT * FROM myfarm
 		<if test="type != null and type != '' and keyword != null and keyword != ''">
 			<where>
@@ -92,9 +87,6 @@
 					<when test="type == 'TC'">
 						AND farm_name LIKE CONCAT('%',#{keyword},'%') OR 
 						farm_intro LIKE CONCAT('%',#{keyword},'%')
-					</when>
-					<when test="type == 'TCW'">
-					    AND (farm_name LIKE CONCAT('%',#{keyword},'%') OR farm_intro LIKE CONCAT('%',#{keyword},'%') OR user_num LIKE CONCAT('%',#{keyword},'%'))
 					</when>
 					<otherwise>
 						AND ${type} LIKE CONCAT('%',#{keyword},'%')

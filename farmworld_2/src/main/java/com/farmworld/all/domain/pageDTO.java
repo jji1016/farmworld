@@ -1,6 +1,8 @@
 package com.farmworld.all.domain;
 
+import lombok.Data;
 
+@Data
 public class pageDTO {
 	// 페이징 처리에서 표시될 시작 페이지
 		private int startPage;
@@ -21,9 +23,12 @@ public class pageDTO {
 		public pageDTO(Criteria cri, int total) {
 			this.cri = cri;
 			this.total = total;
+			
 			this.endPage = (int)(Math.ceil(cri.getPageNum()/10.0)*10);
 			this.startPage=this.endPage-9;
+			
 			int realEnd=(int)(Math.ceil((total*1.0)/cri.getAmount()));
+			
 			if(realEnd<=this.endPage) {
 				this.endPage = realEnd;
 			

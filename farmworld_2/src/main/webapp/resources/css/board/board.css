@@ -1,0 +1,36 @@
+body{
+	height:100%;	
+}
+
+.row_rap {
+    height: calc(100% - 179px);
+}
+
+@media (min-width: 1200px){
+	.col-lg-12 {
+	    width: 1170px;
+	}
+}
+
+@media (min-width: 992px){
+	.col-lg-12 {
+	    width: 970px;
+	}
+}
+
+@media (min-width: 768px){
+	.col-lg-12 {
+	    width: 750px;
+	}
+}
+
+.col-lg-12 {
+	display: flex;
+}
+
+.board_category {
+	width: 200px;
+    border: 1px solid black;
+    margin: 0;
+}
+

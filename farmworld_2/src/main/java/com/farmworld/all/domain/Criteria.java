@@ -24,8 +24,7 @@ public class Criteria {
 		this.start = (pageNum-1)*amount;
 	}
 	public int getStart() {
-		this.start=(this.pageNum-1)*amount;
-		return this.start;
+		this.start=(this.pageNum-1)*amount;		return this.start;
 	}
 	public String[] getTypeArr() {
 		typeArr = this.type==null? new String[] {}:type.split("");
