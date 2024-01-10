@@ -36,7 +36,7 @@
 
 </head>
 <body data-spy="scroll" data-target="#header">
-	<!-- 김지영 test -->
+
     <!--Start Hedaer Section-->
         <jsp:include page="../header.jsp"></jsp:include>
     <!--End of Hedaer Section-->
@@ -177,12 +177,7 @@
         <!--JQuery Click to Scroll down with Menu-->
         <script src="/resources/js/jquery.localScroll.min.js"></script>
         <script src="/resources/js/jquery.scrollTo.min.js"></script>
-        <!--WOW With Animation-->
-        <script src="js/wow.min.js"></script>
-        <!--WOW Activated-->
-        <script>
-            new WOW().init();
-        </script>
+
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="/resources/js/bootstrap.min.js"></script>
         <!-- Custom JavaScript-->
