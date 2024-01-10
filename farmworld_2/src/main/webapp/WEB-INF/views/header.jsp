@@ -60,7 +60,7 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse zero_mp" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-right main_menu">
-                                    <li><a href="">게시판<span class="sr-only">(current)</span></a></li>
+                                    <li><a href="/board/list">게시판<span class="sr-only">(current)</span></a></li>
                                     <li><a href="#shopping">쇼핑</a></li>
                                     <li><a href="">마이농장</a></li>
                                     <li><a href="">지식</a></li>
