@@ -46,7 +46,8 @@
     height: 60%;
     margin-left: 6%;
     margin-top: 30%;
-    background-color: #20c997;"></div>
+    background-color: #20c997;"
+     onclick="redirectToRegister()"></div>
     </div>
             <div class="row" style="width:70%; float:right; margin-top: 2%;">
                 <div class="col-lg-12">
@@ -86,7 +87,7 @@
 							<div class="grid-wrapper">
                                 <div class="grid text-center" style="width:100%" style="display:block">
 									<div class="g-col-4 card">
-									  <img src="/resources/img/popfarm.png" class="card-img-top" alt="...">
+									  <img src="/resources/img/popfarm.png" class="card-img-top" alt="농장 이미지">
 									  <div class="card-body" style="margin-top:4%">
 									    <h4 class="card-title">농장 제목</h4>
 									    <p class="card-text">농장 소개</p>
@@ -97,7 +98,7 @@
 							    </div>
 							    <div class="grid text-center" style="width:100%" style="display:block">
 							      <div class="g-col-4 card">
-									  <img src="/resources/img/popfarm.png" class="card-img-top" alt="...">
+									  <img src="/resources/img/popfarm.png" class="card-img-top" alt="농장 이미지">
 									  <div class="card-body" style="margin-top:4%">
 									    <h4 class="card-title">농장 제목</h4>
 									    <p class="card-text">농장 소개</p>
@@ -152,12 +153,20 @@
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>-->
-        <script src="/resources/js/jquery-1.12.3.min.js"></script>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
         <!--Counter UP Waypoint-->
         <script src="/resources/js/waypoints.min.js"></script>
         <!--Counter UP-->
         <script src="/resources/js/jquery.counterup.min.js"></script>
+        <script>
+		    $(document).ready(function() {
+		        $('.register-div').click(function() {
+		            // jQuery를 사용하여 /register로 이동
+		            window.location.href = '/register';
+		        });
+		    });
+		</script>
 
        
 
