@@ -8,15 +8,15 @@
 
 	<insert id="insert" parameterType="BoardVO">
 		insert into board
-		(board_title,board_content,writer)
-		values (#{board_title}, #{board_content}, #{writer})
+		(board_title,board_content,user_nickname)
+		values (#{board_title}, #{board_content}, #{user_nickname})
 	</insert>
 
 	<insert id="insertSelectBno" parameterType="BoardVO"
 		keyColumn="board_num" keyProperty="board_num" useGeneratedKeys="true">
 		insert into board
-		(board_title,board_content,writer)
-		values (#{board_title}, #{board_content}, #{writer})
+		(board_title,board_content,user_nickname)
+		values (#{board_title}, #{board_content}, #{user_nickname})
 	</insert>
 
 	<select id="selectAll" resultType="BoardVO">
@@ -60,7 +60,7 @@
 						board_content LIKE CONCAT('%',#{keyword},'%')
 					</when>
 					<when test="type == 'TCW'">
-					    AND (board_title LIKE CONCAT('%',#{keyword},'%') OR board_content LIKE CONCAT('%',#{keyword},'%') OR writer LIKE CONCAT('%',#{keyword},'%'))
+					    AND (board_title LIKE CONCAT('%',#{keyword},'%') OR board_content LIKE CONCAT('%',#{keyword},'%') OR user_nickname LIKE CONCAT('%',#{keyword},'%'))
 					</when>
 					<when test='type == "T"'>
 						AND board_title LIKE CONCAT('%',#{keyword},'%') 
@@ -69,7 +69,7 @@
 						AND board_content LIKE CONCAT('%',#{keyword},'%')
 					</when>
 					<when test='type == "W"'>
-						AND writer LIKE CONCAT('%',#{keyword},'%') 
+						AND user_nickname LIKE CONCAT('%',#{keyword},'%') 
 					</when>
 				</choose>
 			</where>
@@ -88,9 +88,16 @@
 						AND board_title LIKE CONCAT('%',#{keyword},'%') OR 
 						board_content LIKE CONCAT('%',#{keyword},'%')
 					</when>
-					<when test="type == 'TCW'">
-					    AND (board_title LIKE CONCAT('%',#{keyword},'%') OR board_content LIKE CONCAT('%',#{keyword},'%') OR writer LIKE CONCAT('%',#{keyword},'%'))
+					<when test='type == "T"'>
+						AND board_title LIKE CONCAT('%',#{keyword},'%') 
 					</when>
+					<when test='type == "C"'>
+						AND board_content LIKE CONCAT('%',#{keyword},'%')
+					</when>
+					<when test='type == "W"'>
+						AND user_nickname LIKE CONCAT('%',#{keyword},'%') 
+					</when>
+					
 					<otherwise>
 						AND ${type} LIKE CONCAT('%',#{keyword},'%')
 					</otherwise>
@@ -100,6 +107,5 @@
 		ORDER BY board_num DESC
 		LIMIT #{start}, #{amount}
 	</select>
-
 </mapper>
 	

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.farmworld.all.domain.Criteria;
 import com.farmworld.board.domain.BoardVO;
+import com.farmworld.login.domain.UserVO;
 
 public interface BoardMapper {
 	
