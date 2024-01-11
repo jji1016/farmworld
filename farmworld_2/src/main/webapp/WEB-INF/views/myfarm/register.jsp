@@ -56,17 +56,19 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                           <form action="/board/register" method="post" role="form">
+                           <form action="/myfarm/register" method="post" role="form">
 	                           
 	                            <div class="form-group">
 	                                <label>농장 이름</label>
-	                                <input class="form-control" name="farm_name">
-	                                <p class="help-block">자신의 농장 이름을 지어주세요.</p>
+	                                <input class="form-control" name="farm_name" maxlength="20" placeholder="농장 이름을 입력해주세요 (최대 20자)">
 	                            </div>
 	                            
 	                            <div class="form-group">
                                    <label>농장 소개</label>
-                                   <textarea class="form-control" rows="5" cols="40" name="farm_intro"></textarea>
+                                   <textarea class="form-control" rows="5" cols="40" 
+                                   name="farm_intro" maxlength="50" 
+                                   placeholder="농장 소개를 입력해주세요 (최대 50자)"
+                                   oninput="formatFarmIntro()"></textarea>
                                </div>
                     
 	                            
@@ -103,6 +105,23 @@
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>-->
         <script src="/resources/js/jquery-1.12.3.min.js"></script>
+        <script>
+	        function formatFarmIntro() {
+	            var textarea = document.getElementById("farm_intro");
+	            var value = textarea.value;
+	
+	            // 18자마다 줄바꿈 처리
+	            var formattedValue = "";
+	            for (var i = 0; i < value.length; i++) {
+	                formattedValue += value[i];
+	                if ((i + 1) % 18 === 0) {
+	                    formattedValue += "\n";
+	                }
+	            }
+	
+	            textarea.value = formattedValue;
+	        }
+    	</script>
 
         <!--Counter UP Waypoint-->
         <script src="/resources/js/waypoints.min.js"></script>
