@@ -59,7 +59,6 @@ public class BoardServiceImpl implements BoardService{
 		log.info(cri);
 		List<BoardVO> result = mapper.getListWithPaging(cri);
 		log.info("----service out getList----");
-		log.info(result);
 		return result;
 	}
 

@@ -68,8 +68,7 @@
                                     	<tr>
 											<th>board_num</th>
 											<th>board_title</th>
-											<th>board_content</th>
-											<th>writer</th> <!-- user_num이용 -->
+											<th>user_nickname</th> <!-- user_num이용 -->
 											<th>board_date</th>
 											<th>board_view</th>
 										</tr>
@@ -166,10 +165,12 @@
 					keyword : $("#searchForm").find("input[name='keyword']").val()
 				},
 				success:function(data){
+					
 					// 아래에 $("tbody") 부분에 원래 #boardTbody있었는데 일단 안나와서 지움
 					let boardTbody = $("tbody");
 					// for( let item of items) -> 여기서 items 은 data와 같고 item은 board와 같음
 					$.each(data, function(index,board){
+						console.log(board);
 						let board_date = new Date(board.board_date);
 						let options = {year:"numeric",month:"2-digit", day:"2-digit", hour:"2-digit",minute:"2-digit"}
 						let formatDate = board_date.toLocaleString("ko-KR",options);
@@ -180,8 +181,7 @@
 						let titleLink = $("<a>").attr("href","/board/get?board_num="+board.board_num).text(board.board_title);
 						let titleTd = $("<td>").append(titleLink);
 						row.append(titleTd);
-						row.append($("<td>").text(board.board_content));
-						row.append($("<td>").text(board.writer));
+						row.append($("<td>").text(board.user_nickname));
 						row.append($("<td>").text(formatDate));
 						row.append($("<td>").text(board.board_view));
 						

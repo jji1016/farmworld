@@ -46,8 +46,9 @@ public class BoardController {
 	@ResponseBody
 	@RequestMapping(value="/searchList", method = RequestMethod.POST)
 	public List<BoardVO> searchList(Criteria cri){
-		System.out.println("getList -> Type : "+ cri.getType());
-		System.out.println("getList -> Keyword : "+ cri.getKeyword());
+		System.out.println("searchList -> Type : "+ cri.getType());
+		System.out.println("searchList -> Keyword : "+ cri.getKeyword());
+		System.out.println("searchList리턴값:  "+boardService.searchList(cri));
 		return boardService.searchList(cri);
 	}
 	
